@@ -14,16 +14,17 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
     <header
       className={`bg-purple-900 flex items-center justify-between px-4 py-3 border-b border-purple-800 relative z-30 transition-all duration-300`}
     >
+      {" "}
       {/* Left section - Hamburger menu */}
       <div className="flex items-center">
         <button
-          className="text-white hover:text-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500 rounded p-1 mr-4"
+          className="text-white hover:text-purple-300 rounded p-1 mr-4"
           onClick={toggleSidebar}
           aria-label="Toggle sidebar"
         >
           <Menu className="w-6 h-6" />
         </button>
-      </div>{" "}
+      </div>
       {/* Center navigation - Hidden on small screens */}
       <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 flex-1 justify-center">
         <Link
@@ -36,16 +37,7 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
         >
           Home
         </Link>
-        <Link
-          href="/task"
-          className={`text-sm transition-colors duration-200 ${
-            pathname === "/task"
-              ? "text-white font-medium border-b-2 border-purple-400 pb-1"
-              : "text-purple-300 hover:text-white"
-          }`}
-        >
-          Task
-        </Link>
+
         <Link
           href="/dashboard"
           className={`text-sm transition-colors duration-200 ${
@@ -59,9 +51,6 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
       </nav>
       {/* Right section - Icons */}
       <div className="flex items-center space-x-3 lg:space-x-4">
-        <button className="text-purple-300 hover:text-white transition-colors duration-200 p-1">
-          <Search className="w-5 h-5" />
-        </button>
         <button className="relative text-purple-300 hover:text-white transition-colors duration-200 p-1">
           <Bell className="w-5 h-5" />
           <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">

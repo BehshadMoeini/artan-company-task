@@ -1,5 +1,5 @@
 "use client";
-import { Home, CheckSquare, BarChart3, X } from "lucide-react";
+import { Home, BarChart3, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -77,23 +77,7 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
               Home
             </span>
           </Link>
-          <Link
-            href="/task"
-            className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors duration-200 group relative ${
-              pathname === "/task"
-                ? "bg-purple-800 text-white border-r-4 border-purple-400"
-                : "hover:bg-purple-800 text-purple-300"
-            }`}
-          >
-            <CheckSquare className="w-4 h-4 flex-shrink-0" />
-            <span
-              className={`text-sm ml-3 transition-opacity duration-300 whitespace-nowrap ${
-                !isOpen ? "md:opacity-0 md:pointer-events-none" : "opacity-100"
-              }`}
-            >
-              Task
-            </span>
-          </Link>
+
           <Link
             href="/dashboard"
             className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors duration-200 group relative ${

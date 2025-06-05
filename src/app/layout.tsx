@@ -2,6 +2,8 @@
 import "./globals.css";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
+import { ContentProvider } from "./context/ContentContext";
+import { NotificationProvider } from "./context/NotificationContext";
 import { useState } from "react";
 
 export default function RootLayout({
@@ -13,20 +15,22 @@ export default function RootLayout({
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  return (
+  };  return (
     <html lang="en">
       <body className="bg-purple-950 text-white">
-        <div className="flex h-screen overflow-hidden">
-          <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-          <div className="flex-1 flex flex-col">
-            <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
-            <main className="flex-1 bg-purple-950 overflow-auto p-4 lg:p-6">
-              {children}
-            </main>
-          </div>
-        </div>
+        <NotificationProvider>
+          <ContentProvider>
+            <div className="flex h-screen overflow-hidden">
+              <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+              <div className="flex-1 flex flex-col">
+                <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+                <main className="flex-1 bg-purple-950 overflow-auto p-4 lg:p-6">
+                  {children}
+                </main>
+              </div>
+            </div>
+          </ContentProvider>
+        </NotificationProvider>
       </body>
     </html>
   );
