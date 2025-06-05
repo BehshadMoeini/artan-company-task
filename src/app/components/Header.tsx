@@ -1,4 +1,7 @@
+"use client";
 import { Search, Bell, User, Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -6,6 +9,7 @@ interface HeaderProps {
 }
 
 const Header = ({ toggleSidebar }: HeaderProps) => {
+  const pathname = usePathname();
   return (
     <header
       className={`bg-purple-900 flex items-center justify-between px-4 py-3 border-b border-purple-800 relative z-30 transition-all duration-300`}
@@ -19,33 +23,40 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
         >
           <Menu className="w-6 h-6" />
         </button>
-      </div>
-
+      </div>{" "}
       {/* Center navigation - Hidden on small screens */}
       <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 flex-1 justify-center">
-        <a
-          href="#"
-          className="text-purple-300 hover:text-white text-sm transition-colors duration-200"
+        <Link
+          href="/"
+          className={`text-sm transition-colors duration-200 ${
+            pathname === "/"
+              ? "text-white font-medium border-b-2 border-purple-400 pb-1"
+              : "text-purple-300 hover:text-white"
+          }`}
         >
-          Lorem Ipsum
-        </a>
-        <a
-          href="#"
-          className="text-purple-300 hover:text-white text-sm transition-colors duration-200"
+          Home
+        </Link>
+        <Link
+          href="/task"
+          className={`text-sm transition-colors duration-200 ${
+            pathname === "/task"
+              ? "text-white font-medium border-b-2 border-purple-400 pb-1"
+              : "text-purple-300 hover:text-white"
+          }`}
         >
-          Dolor Sit
-        </a>
-        <a href="#" className="text-white font-medium text-sm">
-          Amet lorem
-        </a>
-        <a
-          href="#"
-          className="text-purple-300 hover:text-white text-sm transition-colors duration-200"
+          Task
+        </Link>
+        <Link
+          href="/dashboard"
+          className={`text-sm transition-colors duration-200 ${
+            pathname === "/dashboard"
+              ? "text-white font-medium border-b-2 border-purple-400 pb-1"
+              : "text-purple-300 hover:text-white"
+          }`}
         >
-          lorem Sitam
-        </a>
+          Dashboard
+        </Link>
       </nav>
-
       {/* Right section - Icons */}
       <div className="flex items-center space-x-3 lg:space-x-4">
         <button className="text-purple-300 hover:text-white transition-colors duration-200 p-1">

@@ -1,4 +1,7 @@
-import { Home, MapPin, Lock, Settings, Cog, X } from "lucide-react";
+"use client";
+import { Home, CheckSquare, BarChart3, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -6,6 +9,7 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
+  const pathname = usePathname();
   return (
     <>
       {/* Mobile overlay */}
@@ -52,13 +56,17 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
               !isOpen ? "md:opacity-0 md:pointer-events-none" : "opacity-100"
             }`}
           >
-            LOREM
+            NAVIGATION
           </p>
         </div>{" "}
         <nav className="flex flex-col space-y-1 flex-1">
-          <a
-            href="#"
-            className="flex items-center justify-center md:justify-start px-4 py-3 hover:bg-purple-800 transition-colors duration-200 group relative"
+          <Link
+            href="/"
+            className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors duration-200 group relative ${
+              pathname === "/"
+                ? "bg-purple-800 text-white border-r-4 border-purple-400"
+                : "hover:bg-purple-800 text-purple-300"
+            }`}
           >
             <Home className="w-4 h-4 flex-shrink-0" />
             <span
@@ -66,61 +74,43 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
                 !isOpen ? "md:opacity-0 md:pointer-events-none" : "opacity-100"
               }`}
             >
-              lorem dolor
+              Home
             </span>
-          </a>
-          <a
-            href="#"
-            className="flex items-center justify-center md:justify-start px-4 py-3 hover:bg-purple-800 transition-colors duration-200 group relative"
+          </Link>
+          <Link
+            href="/task"
+            className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors duration-200 group relative ${
+              pathname === "/task"
+                ? "bg-purple-800 text-white border-r-4 border-purple-400"
+                : "hover:bg-purple-800 text-purple-300"
+            }`}
           >
-            <MapPin className="w-4 h-4 flex-shrink-0" />
+            <CheckSquare className="w-4 h-4 flex-shrink-0" />
             <span
               className={`text-sm ml-3 transition-opacity duration-300 whitespace-nowrap ${
                 !isOpen ? "md:opacity-0 md:pointer-events-none" : "opacity-100"
               }`}
             >
-              Sit amet
+              Task
             </span>
-          </a>
-          <a
-            href="#"
-            className="flex items-center justify-center md:justify-start px-4 py-3 hover:bg-purple-800 transition-colors duration-200 group relative"
+          </Link>
+          <Link
+            href="/dashboard"
+            className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors duration-200 group relative ${
+              pathname === "/dashboard"
+                ? "bg-purple-800 text-white border-r-4 border-purple-400"
+                : "hover:bg-purple-800 text-purple-300"
+            }`}
           >
-            <Lock className="w-4 h-4 flex-shrink-0" />
+            <BarChart3 className="w-4 h-4 flex-shrink-0" />
             <span
               className={`text-sm ml-3 transition-opacity duration-300 whitespace-nowrap ${
                 !isOpen ? "md:opacity-0 md:pointer-events-none" : "opacity-100"
               }`}
             >
-              Lorem ipsum
+              Dashboard
             </span>
-          </a>
-          <a
-            href="#"
-            className="flex items-center justify-center md:justify-start px-4 py-3 hover:bg-purple-800 transition-colors duration-200 group relative"
-          >
-            <Settings className="w-4 h-4 flex-shrink-0" />
-            <span
-              className={`text-sm ml-3 transition-opacity duration-300 whitespace-nowrap ${
-                !isOpen ? "md:opacity-0 md:pointer-events-none" : "opacity-100"
-              }`}
-            >
-              Dolor sit
-            </span>
-          </a>
-          <a
-            href="#"
-            className="flex items-center justify-center md:justify-start px-4 py-3 hover:bg-purple-800 transition-colors duration-200 group relative"
-          >
-            <Cog className="w-4 h-4 flex-shrink-0" />
-            <span
-              className={`text-sm ml-3 transition-opacity duration-300 whitespace-nowrap ${
-                !isOpen ? "md:opacity-0 md:pointer-events-none" : "opacity-100"
-              }`}
-            >
-              Amet lorem
-            </span>
-          </a>
+          </Link>
         </nav>
       </aside>
     </>
