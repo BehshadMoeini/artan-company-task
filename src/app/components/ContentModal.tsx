@@ -110,7 +110,7 @@ const ContentModal: React.FC<ContentModalProps> = ({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-4 m-2 py-2 text-purple-200 bg-purple-800 hover:bg-purple-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 border border-purple-600"
+                  className="px-4 py-2 text-purple-200 bg-purple-800 hover:bg-purple-700 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 border border-purple-600"
                 >
                   انصراف
                 </button>
