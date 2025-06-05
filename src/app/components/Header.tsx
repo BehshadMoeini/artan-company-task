@@ -26,10 +26,11 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
         </button>
       </div>
       {/* Center navigation - Hidden on small screens */}
-      <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 flex-1 justify-center">
+      <nav className="flex items-center space-x-6 lg:space-x-8 flex-1 justify-center">
+        {" "}
         <Link
           href="/"
-          className={`text-sm transition-colors duration-200 ${
+          className={`text-sm transition-colors ${
             pathname === "/"
               ? "text-white font-medium border-b-2 border-purple-400 pb-1"
               : "text-purple-300 hover:text-white"
@@ -37,10 +38,9 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
         >
           Home
         </Link>
-
         <Link
           href="/dashboard"
-          className={`text-sm transition-colors duration-200 ${
+          className={`text-sm transition-colors ${
             pathname === "/dashboard"
               ? "text-white font-medium border-b-2 border-purple-400 pb-1"
               : "text-purple-300 hover:text-white"
@@ -51,13 +51,13 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
       </nav>
       {/* Right section - Icons */}
       <div className="flex items-center space-x-3 lg:space-x-4">
-        <button className="relative text-purple-300 hover:text-white transition-colors duration-200 p-1">
+        <button className="relative text-purple-300 hover:text-white transition-colors p-1">
           <Bell className="w-5 h-5" />
           <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
             1
           </span>
         </button>
-        <button className="w-8 h-8 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center justify-center transition-colors duration-200">
+        <button className="w-8 h-8 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center justify-center transition-colors">
           <User className="text-white w-4 h-4" />
         </button>
       </div>

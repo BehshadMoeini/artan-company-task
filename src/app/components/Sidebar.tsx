@@ -60,9 +60,10 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
           </p>
         </div>{" "}
         <nav className="flex flex-col space-y-1 flex-1">
+          {" "}
           <Link
             href="/"
-            className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors duration-200 group relative ${
+            className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors group relative ${
               pathname === "/"
                 ? "bg-purple-800 text-white border-r-4 border-purple-400"
                 : "hover:bg-purple-800 text-purple-300"
@@ -70,25 +71,24 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
           >
             <Home className="w-4 h-4 flex-shrink-0" />
             <span
-              className={`text-sm ml-3 transition-opacity duration-300 whitespace-nowrap ${
+              className={`text-sm ml-3 transition-opacity whitespace-nowrap ${
                 !isOpen ? "md:opacity-0 md:pointer-events-none" : "opacity-100"
               }`}
             >
               Home
             </span>
           </Link>
-
           <Link
             href="/dashboard"
-            className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors duration-200 group relative ${
+            className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors group relative ${
               pathname === "/dashboard"
                 ? "bg-purple-800 text-white border-r-4 border-purple-400"
                 : "hover:bg-purple-800 text-purple-300"
             }`}
           >
-            <BarChart3 className="w-4 h-4 flex-shrink-0" />
+            <BarChart3 className="w-4 h-4 flex-shrink-0" />{" "}
             <span
-              className={`text-sm ml-3 transition-opacity duration-300 whitespace-nowrap ${
+              className={`text-sm ml-3 transition-opacity whitespace-nowrap ${
                 !isOpen ? "md:opacity-0 md:pointer-events-none" : "opacity-100"
               }`}
             >

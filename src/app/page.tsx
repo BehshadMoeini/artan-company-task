@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <button
             onClick={handleAddNew}
-            className="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-950"
+            className="inline-flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500"
             dir="ltr"
           >
             <Plus className="w-5 h-5 ml-2" />
@@ -89,7 +89,7 @@ export default function Home() {
               placeholder="جستجو در محتوا..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pr-4 pl-12 py-3 bg-purple-900/50 border border-purple-700 rounded-lg text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+              className="w-full pr-4 pl-12 py-3 bg-purple-900/50 border border-purple-700 rounded-lg text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
               dir="rtl"
             />
           </div>
@@ -111,7 +111,7 @@ export default function Home() {
           {!searchTerm && (
             <button
               onClick={handleAddNew}
-              className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-950"
+              className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500"
             >
               <Plus className="w-5 h-5 mr-2" />
               افزودن محتوای اول
