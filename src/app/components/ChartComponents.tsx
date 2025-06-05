@@ -17,7 +17,20 @@ interface ChartComponentsProps {
   data: ChartDataPoint[];
 }
 
-const CustomTooltip = ({ active, payload, label }: any) => {
+interface TooltipPayload {
+  color: string;
+  name: string;
+  value: number;
+  payload?: ChartDataPoint;
+}
+
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: TooltipPayload[];
+  label?: string;
+}
+
+const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     const data = payload[0]?.payload;
     return (
@@ -26,7 +39,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
           data?.persianDate || label
         }`}</p>
         <p className="text-purple-200 text-sm mb-2">{`روز: ${data?.day}`}</p>
-        {payload.map((entry: any, index: number) => (
+        {payload.map((entry: TooltipPayload, index: number) => (
           <p key={index} className="text-sm" style={{ color: entry.color }}>
             {`${entry.name}: ${entry.value}`}
           </p>
