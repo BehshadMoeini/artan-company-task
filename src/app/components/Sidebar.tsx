@@ -12,7 +12,6 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
   const pathname = usePathname();
   return (
     <>
-      {/* Mobile overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
@@ -26,7 +25,6 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
           fixed md:relative h-full flex flex-col overflow-hidden
         `}
       >
-        {/* Mobile Close Button */}
         <div className="md:hidden flex justify-end p-4">
           <button
             onClick={toggleSidebar}
@@ -36,7 +34,6 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
             <X className="w-6 h-6" />
           </button>
         </div>{" "}
-        {/* Logo Section */}
         <div className="p-4 flex items-center justify-center md:justify-start min-h-[4rem]">
           <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
             L
@@ -49,7 +46,6 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
             LOGO
           </span>
         </div>{" "}
-        {/* Menu Items */}
         <div className="px-4 py-2 text-center md:text-left">
           <p
             className={`text-xs text-purple-300 uppercase mb-2 transition-opacity duration-300 whitespace-nowrap ${
@@ -60,7 +56,6 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
           </p>
         </div>{" "}
         <nav className="flex flex-col space-y-1 flex-1">
-          {" "}
           <Link
             href="/"
             className={`flex items-center justify-center md:justify-start px-4 py-3 transition-colors group relative ${

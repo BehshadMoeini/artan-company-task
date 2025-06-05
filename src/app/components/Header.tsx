@@ -1,5 +1,5 @@
 "use client";
-import { Search, Bell, User, Menu } from "lucide-react";
+import { Bell, User, Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -14,8 +14,6 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
     <header
       className={`bg-purple-900 flex items-center justify-between px-4 py-3 border-b border-purple-800 relative z-30 transition-all duration-300`}
     >
-      {" "}
-      {/* Left section - Hamburger menu */}
       <div className="flex items-center">
         <button
           className="text-white hover:text-purple-300 rounded p-1 mr-4"
@@ -25,7 +23,7 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
           <Menu className="w-6 h-6" />
         </button>
       </div>
-      {/* Center navigation - Hidden on small screens */}
+
       <nav className="flex items-center space-x-6 lg:space-x-8 flex-1 justify-center">
         {" "}
         <Link
@@ -49,7 +47,7 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
           Dashboard
         </Link>
       </nav>
-      {/* Right section - Icons */}
+
       <div className="flex items-center space-x-3 lg:space-x-4">
         <button className="relative text-purple-300 hover:text-white transition-colors p-1">
           <Bell className="w-5 h-5" />
